@@ -55,6 +55,10 @@ app.put('/', (req, res) => {
 
 app.delete('/:id', (req, res) => {
   try {
+    mySqlConnection.query(queries.DELETE_CHILD_QUERY, [req.params.id], function (err, result) {
+      if (err) throw err;
+      console.log(result);
+    });
     mySqlConnection.query(queries.DELETE_QUERY, [req.params.id], function (err, result) {
       if (err) throw err;
       console.log(result);
