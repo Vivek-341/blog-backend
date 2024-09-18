@@ -4,3 +4,4 @@ module.exports.INSERT_QUERY=`INSERT INTO BLOG (TITLE, CONTENT, CREATED_DATE, CRE
                                     values  (?,?,?,'1',?)`;
 module.exports.UPDATE_QUERY=`UPDATE BLOG SET TITLE=?, CONTENT=? where ID = ?`;
 module.exports.DELETE_QUERY='DELETE FROM BLOG where id=?';
+module.exports.DELETE_CHILD_QUERY='DELETE FROM THREAD where blog_id=?';
